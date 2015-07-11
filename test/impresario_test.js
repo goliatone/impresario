@@ -90,6 +90,16 @@ describe('impresario', function(){
                 done();
             }).load(defaults);
         });
+
+        it('should load files', function(done){
+            var expected = _fixture('secrets.json');
+            Impresario({
+                loadFiles: [fixture('secrets.json')]
+            }).on('loaded', function(conf){
+                assert.deepEqual(conf, expected);
+                done();
+            }).load();
+        })
     });
 
     describe('load' , function(){
@@ -100,3 +110,8 @@ describe('impresario', function(){
         // }).on('loaded', done).load(program);
     });
 });
+
+function _fixture(file){
+    var data = require(fixture(file));
+    return data;
+}
