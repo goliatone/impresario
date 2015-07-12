@@ -41,6 +41,7 @@ describe('impresario', function(){
             var B = {port: '3030', username: 'goliatone'}
 
             Impresario({
+                loadFiles: []
             }).on('loaded', function(conf){
                 assert.deepEqual(conf, expected);
                 done();
