@@ -18,10 +18,19 @@ Impresario({
 }).load(program);
 ```
 
-## Documentation
-_(Coming soon)_
-
 ## Examples
+
+```javascript
+var Impresario = require('impresario');
+Impresario({
+    required: ['username', 'password'],
+    optional: ['port', 'url']
+}).on('loaded', function(config){
+    console.log('CONFIG', config);
+}).load(program);
+```
+
+## Documentation
 _(Coming soon)_
 
 ## Contributing
